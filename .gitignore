@@ -41,6 +41,9 @@
 # Composer PHAR
 /mjmr/composer.phar
 
+# Npm
+/mjmr/node_modules/
+
 # IDE
 .idea/*
 
