@@ -1,0 +1,69 @@
+* { font-family: 'Alegreya Sans', sans-serif;
+}
+
+.header-background {
+  background-image: url("/images/DPP_0007.JPG");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 300px;
+  position: relative;
+}
+.header-background h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffeb00;
+  font-size: 50px;
+  font-weight: bolder;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #8e7ac5;
+}
+
+.save-the-date {
+  width: 100%;
+  margin-top: 25px;
+}
+
+#countdown {
+  font-family: sans-serif;
+  color: #fff;
+  font-weight: 100;
+  text-align: center;
+  font-size: 30px;
+}
+#countdown > div {
+  margin-bottom: 5px;
+  padding: 10px;
+  border-radius: 3px;
+  background: #8e7ac5;
+}
+#countdown > div > span {
+  padding: 15px;
+  border-radius: 3px;
+  background: #594297;
+}
+#countdown .smalltext {
+  padding-top: 5px;
+  font-size: 16px;
+}
+
+.navigation-menu {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.button {
+  color: #8e7ac5;
+  border: 0;
+  border-top: 3px solid transparent;
+  border-radius: 0;
+  font-size: 14px;
+}
+.button:hover {
+  border-top: 3px solid #7056b6;
+  color: #7056b6;
+}
