@@ -1,43 +1,45 @@
 # Cache and logs (Symfony2)
-/app/cache/*
-/app/logs/*
-!app/cache/.gitkeep
-!app/logs/.gitkeep
+/mjmr/app/cache/*
+/mjmr/app/logs/*
+!mjmr/app/cache/.gitkeep
+!mjmr/app/logs/.gitkeep
 
 # Cache and logs (Symfony3)
-/var/cache/*
-/var/logs/*
-!var/cache/.gitkeep
-!var/logs/.gitkeep
+/mjmr/var/cache/*
+/mjmr/var/logs/*
+!mjmr/var/cache/.gitkeep
+!mjmr/var/logs/.gitkeep
 
 # Parameters
-/app/config/parameters.yml
-/app/config/parameters.ini
+/mjmr/app/config/parameters.yml
+/mjmr/app/config/parameters.ini
 
 # Managed by Composer
-/app/bootstrap.php.cache
-/var/bootstrap.php.cache
-/bin/*
-!bin/console
-!bin/symfony_requirements
-/vendor/
+/mjmr/app/bootstrap.php.cache
+/mjmr/var/bootstrap.php.cache
+/mjmr/bin/*
+!mjmr/bin/console
+!mjmr/bin/symfony_requirements
+/mjmr/vendor/
 
 # Assets and user uploads
-/web/bundles/
-/web/uploads/
+/mjmr/web/bundles/
+/mjmr/web/uploads/
+/mjmr/web/css/
+/mjmr/web/js/
 
 # Assets managed by Bower
-/web/assets/vendor/
+/mjmr/web/assets/vendor/
 
 # PHPUnit
-/app/phpunit.xml
-/phpunit.xml
+/mjmr/app/phpunit.xml
+/mjmr/phpunit.xml
 
 # Build data
-/build/
+/mjmr/build/
 
 # Composer PHAR
-/composer.phar
+/mjmr/composer.phar
 
 # IDE
 .idea/*
