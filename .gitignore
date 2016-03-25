@@ -7,8 +7,10 @@
 # Cache and logs (Symfony3)
 /mjmr/var/cache/*
 /mjmr/var/logs/*
+/mjmr/var/sessions/*
 !mjmr/var/cache/.gitkeep
 !mjmr/var/logs/.gitkeep
+!mjmr/var/sessions/.gitkeep
 
 # Parameters
 /mjmr/app/config/parameters.yml
