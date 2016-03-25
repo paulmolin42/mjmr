@@ -38,3 +38,9 @@
 
 # Composer PHAR
 /composer.phar
+
+# IDE
+.idea/*
+
+# Vagrant
+.vagrant/*
