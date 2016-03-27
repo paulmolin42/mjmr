@@ -13,9 +13,9 @@ nginx:
     servername: mjmr.dev
 pgsql:
     install: '1'
-    database: db
-    user: user
-    password: password
+    database: mjmrdb
+    user: mjmr
+    password: mjmr
     dump: ''
 php:
     install: '1'
