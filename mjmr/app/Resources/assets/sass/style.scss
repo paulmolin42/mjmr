@@ -1,4 +1,8 @@
-* { font-family: 'Alegreya Sans', sans-serif;
+$primary-color: #8e7ac5;
+$header-title-color: #ffeb00;
+
+* {
+  font-family: 'Alegreya Sans', sans-serif;
 }
 
 .header-background {
@@ -14,13 +18,13 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: #ffeb00;
+  color: $header-title-color;
   font-size: 50px;
   font-weight: bolder;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #8e7ac5;
+  color: $primary-color;
 }
 
 .save-the-date {
@@ -39,12 +43,12 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 5px;
   padding: 10px;
   border-radius: 3px;
-  background: #8e7ac5;
+  background: $primary-color;
 }
 #countdown > div > span {
   padding: 15px;
   border-radius: 3px;
-  background: #594297;
+  background: darken($primary-color, 20%);
 }
 #countdown .smalltext {
   padding-top: 5px;
@@ -57,15 +61,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .button {
-  color: #8e7ac5;
+  color: $primary-color;
   border: 0;
   border-top: 3px solid transparent;
   border-radius: 0;
   font-size: 14px;
 }
 .button:hover {
-  border-top: 3px solid #7056b6;
-  color: #7056b6;
+  border-top: 3px solid darken($primary-color, 10%);
+  color: darken($primary-color, 10%);
 }
 
 input[type="email"]:focus,
@@ -77,7 +81,7 @@ input[type="url"]:focus,
 input[type="password"]:focus,
 textarea:focus,
 select:focus {
-  border: 1px solid #8e7ac5;
+  border: 1px solid $primary-color;
   outline: 0;
 }
 
@@ -87,8 +91,8 @@ input[type="submit"].button-primary,
 input[type="reset"].button-primary,
 input[type="button"].button-primary {
   color: #FFF;
-  background-color: #8e7ac5;
-  border-color: #8e7ac5;
+  background-color: $primary-color;
+  border-color: $primary-color;
 }
 
 .button.button-primary:hover,
@@ -102,6 +106,10 @@ input[type="submit"].button-primary:focus,
 input[type="reset"].button-primary:focus,
 input[type="button"].button-primary:focus {
   color: #FFF;
-  background-color: #7056b6;
-  border-color: #7056b6;
+  background-color: darken($primary-color, 10%);
+  border-color: darken($primary-color, 10%);
+}
+
+label {
+  color: darken($primary-color, 10%);
 }
