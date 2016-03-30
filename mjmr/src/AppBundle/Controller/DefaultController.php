@@ -48,10 +48,18 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/reception", name="default_wedding_list")
+     * @Route("/liste-de-mariage", name="default_wedding_list")
      */
     public function weddingListAction()
     {
         return $this->render('default/weddingList.html.twig');
+    }
+
+    /**
+     * @Route("/covoiturage", name="default_carpooling")
+     */
+    public function carpoolingAction()
+    {
+        return $this->render('default/carpooling.html.twig');
     }
 }
