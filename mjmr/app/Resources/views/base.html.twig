@@ -18,7 +18,7 @@
                 {% endblock %}
             </div>
             {% block footer %}
-                <footer><a href="mailto:mjmravel@gmail.com">mjmravel@gmail.com</a></footer>
+                {% include '::footer.html.twig' %}
             {% endblock %}
         {% endblock %}
         {% block javascripts %}<script type="text/javascript" src="{{ asset('js/site.js') }}"></script>{% endblock %}

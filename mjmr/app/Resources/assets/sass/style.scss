@@ -1,5 +1,6 @@
 $primary-color: #8e7ac5;
 $header-title-color: #ffeb00;
+$footer-height: 20px;
 
 * {
   font-family: 'Alegreya Sans', sans-serif;
@@ -112,4 +113,30 @@ input[type="button"].button-primary:focus {
 
 label {
   color: darken($primary-color, 10%);
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin: 0 0 $footer-height;
+}
+
+footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: $footer-height;
+  width: 100%;
+  text-align: center;
+}
+
+a {
+  color: $primary-color;
+
+  &:active, &:hover {
+    color: darken($primary-color, 20%);
+  }
 }
