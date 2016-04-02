@@ -1,0 +1,2 @@
+[production]
+mjmr.fr ansible_connection=ssh ansible_ssh_host=51.255.41.2 ansible_ssh_port=22 ansible_ssh_user=root

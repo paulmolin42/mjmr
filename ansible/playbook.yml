@@ -6,9 +6,15 @@
   roles:
     - server
     - create_www_data_user
-    - vagrant_local
     - nginx
     - pgsql
     - php
     - composer
     - app
+
+- hosts: dev
+  sudo: true
+  vars_files:
+    - vars/all.yml
+  roles:
+    - vagrant_local
