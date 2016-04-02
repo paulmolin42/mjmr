@@ -32,5 +32,5 @@ Vagrant.configure("2") do |config|
         ansible.limit = 'all'
     end
 
-    config.vm.synced_folder "./mjmr", "/var/www/mjmr/current", type: "nfs"
+    config.vm.synced_folder ".", "/var/www/mjmr/current", type: "nfs"
 end
