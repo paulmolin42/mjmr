@@ -1,8 +1,10 @@
 {% extends 'base.html.twig' %}
+{% set wedding_list_url = 'http://www.millemercismariage.com/MJMR2016/liste.html' %}
 
 {% block content %}
     <div class="wrapper">
-        <p>Notre liste de mariage est accessible à <a href="http://www.millemercismariage.com/MJMR2016/liste.html">cette
-            adresse</a>.</p>
+        <p>
+            Notre liste de mariage est accessible à <a href="{{ wedding_list_url }}" target="_blank">cette adresse</a>.
+        </p>
     </div>
 {% endblock %}
