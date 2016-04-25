@@ -1,6 +1,7 @@
 $primary-color: #8e7ac5;
 $header-title-color: #ffeb00;
 $footer-height: 20px;
+$footer-margin-bottom: 20px;
 
 * {
   font-family: 'Alegreya Sans', sans-serif;
@@ -22,6 +23,10 @@ $footer-height: 20px;
   color: $header-title-color;
   font-size: 50px;
   font-weight: bolder;
+}
+
+body > .container {
+  margin-bottom: $footer-height + $footer-margin-bottom;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -128,7 +133,7 @@ footer {
   position: absolute;
   left: 0;
   bottom: 0;
-  margin-bottom: 20px;
+  margin-bottom: $footer-margin-bottom;
   height: $footer-height;
   width: 100%;
   text-align: center;
