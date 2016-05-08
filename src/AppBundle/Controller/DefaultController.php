@@ -6,6 +6,7 @@ use AppBundle\Entity\CarpoolingTopic;
 use AppBundle\Form\CarpoolingTopicType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 
 class DefaultController extends Controller
 {
@@ -60,10 +61,20 @@ class DefaultController extends Controller
     /**
      * @Route("/covoiturage", name="default_carpooling")
      */
-    public function carpoolingAction()
+    public function carpoolingAction(Request $request)
     {
         $topic = new CarpoolingTopic();
         $topicForm = $this->createForm(CarpoolingTopicType::class, $topic);
+
+        $topicForm->handleRequest($request);
+
+        if ($topicForm->isValid()) {
+            $flashMessage = CarpoolingTopic::CARPOOLING_REQUEST === $topic->getOfferOrRequest() ?
+                'Votre demande de covoiturage a bien été enregistrée !' :
+                'Votre proposition de covoiturage a bien été enregistrée !';
+
+            $this->addFlash('success', $flashMessage);
+        }
 
         return $this->render('default/carpooling.html.twig', [
             'form' => $topicForm->createView()
