@@ -2,6 +2,8 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\CarpoolingTopic;
+use AppBundle\Form\CarpoolingTopicType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
@@ -60,6 +62,11 @@ class DefaultController extends Controller
      */
     public function carpoolingAction()
     {
-        return $this->render('default/carpooling.html.twig');
+        $topic = new CarpoolingTopic();
+        $topicForm = $this->createForm(CarpoolingTopicType::class, $topic);
+
+        return $this->render('default/carpooling.html.twig', [
+            'form' => $topicForm->createView()
+        ]);
     }
 }
