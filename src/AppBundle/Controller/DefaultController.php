@@ -67,17 +67,28 @@ class DefaultController extends Controller
         $topicForm = $this->createForm(CarpoolingTopicType::class, $topic);
 
         $topicForm->handleRequest($request);
+        $doctrine = $this->getDoctrine();
+        $topics = $doctrine->getRepository(CarpoolingTopic::class)->findAllOrderedByDate();
 
         if ($topicForm->isValid()) {
+            $topic->setPostedAt(new \DateTime());
+
+            $entityManager = $doctrine->getManager();
+            $entityManager->persist($topic);
+            $entityManager->flush();
+
             $flashMessage = CarpoolingTopic::CARPOOLING_REQUEST === $topic->getOfferOrRequest() ?
                 'Votre demande de covoiturage a bien été enregistrée !' :
                 'Votre proposition de covoiturage a bien été enregistrée !';
 
             $this->addFlash('success', $flashMessage);
+
+            return $this->redirectToRoute('default_carpooling');
         }
 
         return $this->render('default/carpooling.html.twig', [
-            'form' => $topicForm->createView()
+            'form'   => $topicForm->createView(),
+            'topics' => $topics,
         ]);
     }
 }
