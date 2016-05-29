@@ -2,7 +2,9 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\CarpoolingMessage;
 use AppBundle\Entity\CarpoolingTopic;
+use AppBundle\Form\CarpoolingMessageType;
 use AppBundle\Form\CarpoolingTopicType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -97,6 +99,12 @@ class DefaultController extends Controller
      */
     public function carpoolingTopicAction(CarpoolingTopic $carpoolingTopic, Request $request)
     {
-        return $this->render('default/index.html.twig');
+        $message = new CarpoolingMessage();
+        $messageForm = $this->createForm(CarpoolingMessageType::class, $message);
+
+        return $this->render('default/carpoolingTopic.html.twig', [
+            'topic' => $carpoolingTopic,
+            'form'             => $messageForm->createView(),
+        ]);
     }
 }
