@@ -102,6 +102,23 @@ class DefaultController extends Controller
         $message = new CarpoolingMessage();
         $messageForm = $this->createForm(CarpoolingMessageType::class, $message);
 
+        $messageForm->handleRequest($request);
+        $doctrine = $this->getDoctrine();
+
+        if ($messageForm->isValid()) {
+            $message->setPostedAt(new \DateTime());
+
+            $entityManager = $doctrine->getManager();
+            $entityManager->persist($message);
+            $entityManager->flush();
+
+            $flashMessage = 'Votre message a bien été enregistré !';
+
+            $this->addFlash('success', $flashMessage);
+
+            return $this->redirectToRoute('default_carpooling_topic', ['id' => $carpoolingTopic->getId()]);
+        }
+
         return $this->render('default/carpoolingTopic.html.twig', [
             'topic' => $carpoolingTopic,
             'form'             => $messageForm->createView(),
