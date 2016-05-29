@@ -23,10 +23,11 @@
         {% if topics is not empty %}
         <ul>
             {% for topic in topics %}
-                <li>{{ topic.author }} a fait
+                <li>
+                    <a href="{{ path('default_carpooling_topic', {id: topic.id}) }}">{{ topic.author }} a fait
                     une {{ topic.offerOrRequest is constant('AppBundle\\Entity\\CarpoolingTopic::CARPOOLING_OFFER') ? 'proposition' : 'demande' }}
                     de covoiturage le {{ topic.postedAt|date('d/m/Y', timezone='Europe/Paris') }}
-                    à {{ topic.postedAt|date('H:i', timezone='Europe/Paris') }}.
+                    à {{ topic.postedAt|date('H:i', timezone='Europe/Paris') }}.</a>
                 </li>
             {% endfor %}
         </ul>

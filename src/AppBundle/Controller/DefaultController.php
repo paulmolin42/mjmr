@@ -91,4 +91,12 @@ class DefaultController extends Controller
             'topics' => $topics,
         ]);
     }
+
+    /**
+     * @Route("/covoiturage/{id}", name="default_carpooling_topic")
+     */
+    public function carpoolingTopicAction(CarpoolingTopic $carpoolingTopic, Request $request)
+    {
+        return $this->render('default/index.html.twig');
+    }
 }
