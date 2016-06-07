@@ -8,6 +8,6 @@ set :tmp_dir, '/var/www/tmp'
 set :deploy_to, '/var/www/mjmr'
 
 set :linked_files, ['app/config/parameters.yml']
-set :linked_dirs, [fetch(:log_path), 'web/images']
+set :linked_dirs, [fetch(:log_path), 'web/images', 'web/pdf']
 
 after 'deploy:updated', 'npm:install'
