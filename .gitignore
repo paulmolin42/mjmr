@@ -16,10 +16,12 @@
 /vendor/
 
 # Assets and user uploads
+/web/audio/
 /web/bundles/
-/web/images/
 /web/css/
+/web/images/
 /web/js/
+/web/pdf/
 
 # Assets managed by Bower
 /mjmr/web/assets/vendor/
