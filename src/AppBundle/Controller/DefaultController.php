@@ -104,9 +104,11 @@ class DefaultController extends Controller
 
         $messageForm->handleRequest($request);
         $doctrine = $this->getDoctrine();
+        $messages = $doctrine->getRepository(CarpoolingMessage::class)->findForTopicOrderedByDate($carpoolingTopic);
 
         if ($messageForm->isValid()) {
             $message->setPostedAt(new \DateTime());
+            $message->setCarpoolingTopic($carpoolingTopic);
 
             $entityManager = $doctrine->getManager();
             $entityManager->persist($message);
@@ -121,7 +123,7 @@ class DefaultController extends Controller
 
         return $this->render('default/carpoolingTopic.html.twig', [
             'topic' => $carpoolingTopic,
-            'form'             => $messageForm->createView(),
+            'form'  => $messageForm->createView(),
         ]);
     }
 }
