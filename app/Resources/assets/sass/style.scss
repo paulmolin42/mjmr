@@ -196,6 +196,12 @@ a {
   opacity: .2;
 }
 
+@mixin carpooling-topic() {
+  padding: 20px;
+  background-color: lighten($primary-color, 20%);
+  border-radius: 10px;
+}
+
 li.carpooling-topic {
   list-style: none;
 
@@ -209,12 +215,15 @@ li.carpooling-topic {
   }
 
   div {
-    padding: 20px;
-    background-color: lighten($primary-color, 20%);
-    border-radius: 10px;
+    @include carpooling-topic();
 
     &:hover, &:focus {
       background-color: lighten($primary-color, 10%);
     }
   }
+}
+
+p.carpooling-topic {
+  @include carpooling-topic();
+  color: darken($primary-color, 20%);
 }
