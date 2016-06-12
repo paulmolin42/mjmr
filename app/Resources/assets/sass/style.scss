@@ -226,4 +226,10 @@ li.carpooling-topic {
 p.carpooling-topic {
   @include carpooling-topic();
   color: darken($primary-color, 20%);
+  font-size: 20px;
+}
+
+p.carpooling-message {
+  @include carpooling-topic();
+  color: darken($primary-color, 20%);
 }
