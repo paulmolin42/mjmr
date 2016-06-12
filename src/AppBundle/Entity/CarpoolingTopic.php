@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -51,6 +52,15 @@ class CarpoolingTopic
      * @ORM\Column(name="offer_or_request", type="integer")
      */
     private $offerOrRequest;
+
+    /**
+     * @var ArrayCollection
+     * @ORM\OneToMany(
+     *     targetEntity="CarpoolingMessage",
+     *     mappedBy="carpoolingTopic"
+     * )
+     */
+    private $messages;
 
 
     /**
@@ -157,6 +167,14 @@ class CarpoolingTopic
     public function getOfferOrRequest()
     {
         return $this->offerOrRequest;
+    }
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getMessages()
+    {
+        return $this->messages;
     }
 }
 

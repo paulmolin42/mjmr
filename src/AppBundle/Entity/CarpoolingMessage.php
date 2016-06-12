@@ -42,6 +42,16 @@ class CarpoolingMessage
      */
     private $content;
 
+    /**
+     * @var CarpoolingTopic
+     *
+     * @ORM\ManyToOne(
+     *     targetEntity="CarpoolingTopic",
+     *     inversedBy="messages"
+     * )
+     */
+    private $carpoolingTopic;
+
 
     /**
      * Get id
@@ -123,6 +133,22 @@ class CarpoolingMessage
     public function getContent()
     {
         return $this->content;
+    }
+
+    /**
+     * @return CarpoolingTopic
+     */
+    public function getCarpoolingTopic()
+    {
+        return $this->carpoolingTopic;
+    }
+
+    /**
+     * @param CarpoolingTopic $carpoolingTopic
+     */
+    public function setCarpoolingTopic($carpoolingTopic)
+    {
+        $this->carpoolingTopic = $carpoolingTopic;
     }
 }
 
