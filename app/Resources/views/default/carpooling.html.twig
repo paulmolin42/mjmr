@@ -5,9 +5,7 @@
 {%- block choice_widget_expanded -%}
     <div {{ block('widget_container_attributes') }}>
         {%- for child in form %}
-            <label>{{ child.vars.label }}
-                {{- form_widget(child) -}}
-            </label>
+            <label>{{ child.vars.label }} {{ form_widget(child) -}}</label>
         {% endfor -%}
     </div>
 {%- endblock choice_widget_expanded -%}
@@ -23,11 +21,15 @@
         {% if topics is not empty %}
         <ul>
             {% for topic in topics %}
-                <li>
-                    <a href="{{ path('default_carpooling_topic', {id: topic.id}) }}">{{ topic.author }} a fait
-                    une {{ topic.offerOrRequest is constant('AppBundle\\Entity\\CarpoolingTopic::CARPOOLING_OFFER') ? 'proposition' : 'demande' }}
-                    de covoiturage le {{ topic.postedAt|date('d/m/Y', timezone='Europe/Paris') }}
-                    à {{ topic.postedAt|date('H:i', timezone='Europe/Paris') }}.</a>
+                <li class="carpooling-topic">
+                    <a href="{{ path('default_carpooling_topic', {id: topic.id}) }}">
+                        <div>
+                            {{ topic.author }} a fait une
+                            {{ topic.offerOrRequest is constant('AppBundle\\Entity\\CarpoolingTopic::CARPOOLING_OFFER') ? 'proposition' : 'demande' }}
+                            de covoiturage le {{ topic.postedAt|date('d/m/Y', timezone='Europe/Paris') }}
+                            à {{ topic.postedAt|date('H:i', timezone='Europe/Paris') }}.
+                        </div>
+                    </a>
                 </li>
             {% endfor %}
         </ul>

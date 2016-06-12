@@ -195,3 +195,26 @@ a {
   filter: alpha(opacity=20);
   opacity: .2;
 }
+
+li.carpooling-topic {
+  list-style: none;
+
+  a {
+    color: darken($primary-color, 20%);
+    text-decoration: none;
+
+    &:hover, &:focus {
+      color: darken($primary-color, 30%);
+    }
+  }
+
+  div {
+    padding: 20px;
+    background-color: lighten($primary-color, 20%);
+    border-radius: 10px;
+
+    &:hover, &:focus {
+      background-color: lighten($primary-color, 10%);
+    }
+  }
+}
