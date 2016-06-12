@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <div class="wrapper">
+        <p class="carpooling-topic">{{ topic.author }} a fait
+            une {{ topic.offerOrRequest is constant('AppBundle\\Entity\\CarpoolingTopic::CARPOOLING_OFFER') ? 'proposition' : 'demande' }}
+            de covoiturage le {{ topic.postedAt|date('d/m/Y', timezone='Europe/Paris') }}
+            à {{ topic.postedAt|date('H:i', timezone='Europe/Paris') }}.</p>
+        <ul>
+            {% for message in topic.messages %}
+            <li>{{ message.author }} a dit {{ message.content }} le {{ message.postedAt|date('d/m/Y', timezone='Europe/Paris') }}</li>
+            {% endfor %}
+        </ul>
+        {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <input type="submit" value="Poster"
+               class="button button-primary" />
+        {{ form_end(form) }}
+    </div>
+{% endblock %}
