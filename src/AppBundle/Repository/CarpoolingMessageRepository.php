@@ -17,7 +17,7 @@ class CarpoolingMessageRepository extends \Doctrine\ORM\EntityRepository
             ->leftJoin('carpoolingMessage.carpoolingTopic', 'carpoolingTopic')
             ->where('carpoolingTopic.id = :topicId')
             ->setParameter('topicId', $carpoolingTopic->getId())
-            ->orderBy('carpoolingMessage.postedAt', 'DESC')
+            ->orderBy('carpoolingMessage.postedAt', 'ASC')
             ->getQuery()
             ->getResult();
     }
