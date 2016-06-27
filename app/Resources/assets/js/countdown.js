@@ -1,4 +1,4 @@
-var deadline = 'July 9 2016 15:30:00 GMT+01:00';
+var deadline = 'July 9 2016 14:30:00 GMT+01:00';
 
 function getRemainingTime(endTime) {
     var now = new Date();
