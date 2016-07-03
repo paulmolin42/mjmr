@@ -126,4 +126,12 @@ class DefaultController extends Controller
             'form'  => $messageForm->createView(),
         ]);
     }
+
+    /**
+     * @Route("/brunch-dominical", name="default_sunday_brunch")
+     */
+    public function sundayBrunchAction()
+    {
+        return $this->render('default/sundayBrunch.html.twig');
+    }
 }
