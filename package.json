@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "description": "Front dependencies",
   "scripts": {
-    "postinstall":"./node_modules/.bin/gulp"
+    "postinstall": "./node_modules/.bin/gulp",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "gulp": "~3.9.1",
@@ -13,6 +15,8 @@
     "gulp-util": "~3.0.7",
     "gulp-plumber": "~1.1.0",
     "gulp-sourcemaps": "~1.6.0",
-    "gulp-if": "~2.0.0"
-  }
+    "gulp-if": "~2.0.0",
+    "snyk": "^1.192.3"
+  },
+  "snyk": true
 }
